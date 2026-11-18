@@ -1,0 +1,370 @@
+.doc-hero,
+.support-hero {
+  display: grid;
+  align-items: end;
+  gap: clamp(2rem, 6vw, 5.5rem);
+  padding-block: clamp(3.25rem, 8vw, 7.5rem) clamp(2.5rem, 6vw, 5.25rem);
+}
+
+.doc-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 17rem);
+}
+
+.support-hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+}
+
+.doc-intro {
+  min-width: 0;
+}
+
+.doc-intro h1 {
+  max-inline-size: 13ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(3.25rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.doc-intro > p:not(.eyebrow):not(.doc-kicker) {
+  max-inline-size: 60ch;
+  margin-block: clamp(1.2rem, 3vw, 1.8rem) 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.doc-intro .eyebrow,
+.doc-intro .doc-kicker {
+  margin-block: 0 1.2rem;
+}
+
+.doc-index-mark {
+  position: relative;
+  display: grid;
+  min-height: 8rem;
+  align-content: end;
+  justify-items: start;
+  gap: 0.4rem;
+  padding: 1rem 1.2rem;
+  border-inline-start: 1px solid var(--accent);
+  color: var(--muted);
+  background:
+    linear-gradient(180deg, transparent, var(--bg) 85%),
+    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 1.25rem),
+    repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 1.25rem);
+  background-position: left bottom;
+  line-height: 1.4;
+}
+
+.doc-index-mark > * {
+  margin: 0;
+}
+
+.doc-index-mark :is(strong, time) {
+  color: var(--ink);
+}
+
+.doc-layout,
+.support-layout {
+  display: grid;
+  align-items: start;
+  border-block-start: 1px solid var(--line);
+  padding-block: clamp(2rem, 5vw, 4.25rem) clamp(4rem, 9vw, 7rem);
+}
+
+.doc-layout {
+  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.doc-sidebar {
+  position: sticky;
+  top: var(--header-offset, 6rem);
+  min-width: 0;
+}
+
+.doc-nav {
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+}
+
+.doc-nav :is(h2, p) {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.doc-nav :is(ul, ol) {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-toc-link {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-inline-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.doc-toc-link:hover,
+.doc-toc-link[aria-current="location"] {
+  border-inline-start-color: var(--accent);
+  color: var(--ink);
+  background-color: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.doc-content {
+  min-width: 0;
+  max-width: 47rem;
+}
+
+.doc-section {
+  scroll-margin-top: calc(var(--header-offset, 6rem) + 1rem);
+}
+
+.doc-section + .doc-section {
+  margin-block-start: clamp(1.75rem, 4vw, 3rem);
+  padding-block-start: clamp(1.75rem, 4vw, 3rem);
+  border-block-start: 1px solid var(--line);
+}
+
+.doc-section h2,
+.faq-list > h2 {
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 730;
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.doc-section h3 {
+  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.doc-section :is(p, ul, ol),
+.faq-list details p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.doc-section :is(p, ul, ol) + :is(p, ul, ol) {
+  margin-block-start: 0.8rem;
+}
+
+.doc-section :is(ul, ol) {
+  padding-inline-start: 1.3rem;
+}
+
+.doc-section li + li {
+  margin-block-start: 0.45rem;
+}
+
+.doc-section li::marker {
+  color: var(--accent);
+}
+
+.doc-section a,
+.faq-list a,
+.contact-card p a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.doc-section a:hover,
+.faq-list a:hover,
+.contact-card p a:hover {
+  color: var(--ink);
+}
+
+.legal-callout {
+  margin-block: 1rem;
+  padding: 1rem 1.2rem;
+  border-inline-start: 2px solid var(--accent);
+  color: var(--ink);
+  background-color: color-mix(in srgb, var(--accent) 8%, var(--panel));
+}
+
+.contact-card {
+  min-width: 0;
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+  border: 1px solid var(--line);
+  border-block-start-color: var(--accent);
+  background:
+    radial-gradient(ellipse at 100% 0%, #ff743e12, transparent 70%),
+    var(--panel);
+}
+
+.contact-card h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.65rem, 3.3vw, 2.7rem);
+  font-weight: 730;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.contact-card p {
+  margin-block: 0.8rem 0;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-start: 1.35rem;
+}
+
+.contact-actions .button {
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+.support-layout {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(2rem, 7vw, 6rem);
+}
+
+.support-info,
+.faq-list {
+  min-width: 0;
+}
+
+.faq-list details {
+  border-block-start: 1px solid var(--line);
+}
+
+.faq-list details:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+.faq-list summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.8rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 670;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.6rem;
+  height: 1.6rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  content: "+";
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq-list details[open] > summary::after {
+  border-color: var(--accent);
+  content: "−";
+}
+
+.faq-list summary:hover {
+  color: var(--accent);
+}
+
+.faq-list details p {
+  max-width: 60ch;
+  padding: 0 1.85rem 1rem 0;
+}
+
+.doc-toc-link:focus-visible,
+.faq-list summary:focus-visible,
+.doc-section a:focus-visible,
+.contact-card a:focus-visible,
+.faq-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .doc-hero,
+  .support-hero,
+  .doc-layout,
+  .support-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .doc-hero,
+  .support-hero {
+    gap: clamp(1.75rem, 6vw, 3rem);
+  }
+
+  .doc-index-mark {
+    min-height: 0;
+  }
+
+  .doc-sidebar {
+    position: static;
+  }
+
+  .doc-nav :is(ul, ol) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.55rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .doc-intro h1 {
+    font-size: clamp(2.75rem, 12vw, 3.25rem);
+  }
+
+  .doc-nav :is(ul, ol) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doc-toc-link {
+    transition: none;
+  }
+}
